@@ -45,6 +45,7 @@ public class NoteController {
         noteService.addNote(note);
     } */
 
+
     @PostMapping("/notes")
     public ResponseEntity<NoteDto> addNote(@RequestBody NoteDto noteDto) {
 
@@ -67,6 +68,8 @@ public class NoteController {
         //return noteService.getNote(noteId);
     } */
 
+
+
     @GetMapping("/notes/{id}")
     public ResponseEntity<NoteDto> getNoteById(@PathVariable(name = "id") Long noteId) {
 
@@ -76,8 +79,14 @@ public class NoteController {
         NoteDto noteResponse = modelMapper.map(note,NoteDto.class);
         return ResponseEntity.ok().body(noteResponse);
 
-
     }
+
+    //Get a Note By Id And Title
+    /*
+    @GetMapping("/notes/findByIdAndTitle/{id}")
+    public Note getNoteByIdAndTitle(@PathVariable(value = "id") Long noteId,@PathVariable(value="title") String title) {
+        return noteService.getNoteByIdAndTitle(noteId,title);
+    }*/
 
     //Get a Note By Title
      @GetMapping("/notes/search/{title}")

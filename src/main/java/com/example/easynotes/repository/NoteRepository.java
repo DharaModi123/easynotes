@@ -9,7 +9,6 @@ import java.util.List;
 import java.util.Optional;
 
 
-
 @Repository
 public interface NoteRepository extends JpaRepository<Note, Long> {
 
@@ -17,9 +16,12 @@ public interface NoteRepository extends JpaRepository<Note, Long> {
     Content findByContent(String content);
 
 
-
    @Query(value = "SELECT content FROM notes WHERE id = ?1", nativeQuery = true)
     Content findByNative(long id);
+
+
+   //@Query(value= "SELECT noteId,title FROM notes WHERE id = ?1 and title = ?2")
+    //Note findByIdAndTitle(Long noteId, String title);
 
 
 }

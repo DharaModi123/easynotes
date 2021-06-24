@@ -46,6 +46,12 @@ public class NoteService {
         return noteRepository.findByContent(content);
     }
 
+    /*
+    public Note getNoteByIdAndTitle(Long noteId, String title)
+    {
+        return noteRepository.findByIdAndTitle(noteId,title);
+    }*/
+
 
     public Note addNote(Note note) {
 
